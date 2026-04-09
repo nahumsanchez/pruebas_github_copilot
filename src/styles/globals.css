@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Rajdhani", sans-serif;
+  background:
+    radial-gradient(
+      circle at 16% 10%,
+      rgba(187, 53, 255, 0.2),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 88% 80%,
+      rgba(43, 231, 245, 0.2),
+      transparent 30%
+    ),
+    linear-gradient(140deg, #06030e 0%, #10081e 40%, #08050f 100%);
+  color: #f8f4ff;
+}
+
+.cyber-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-shell::before {
+  content: "";
+  position: absolute;
+  inset: -40% -15%;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 48%,
+      rgba(255, 255, 255, 0.03) 49%,
+      transparent 50%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0 48%,
+      rgba(255, 255, 255, 0.03) 49%,
+      transparent 50%
+    );
+  background-size: 26px 26px;
+  pointer-events: none;
+  transform: rotate(-8deg);
+}
+
+.cyber-card {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(187, 53, 255, 0.35);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 8, 25, 0.86),
+    rgba(20, 12, 34, 0.72)
+  );
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+    0 0 24px rgba(188, 53, 255, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+@media (min-width: 640px) {
+  .cyber-card {
+    padding: 1.75rem;
+  }
+}
+
+.card-label {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(248, 244, 255, 0.56);
+}
+
+.cyber-button {
+  width: 100%;
+  border: 1px solid rgba(188, 53, 255, 0.7);
+  border-radius: 0.75rem;
+  background: linear-gradient(
+    90deg,
+    rgba(90, 18, 136, 0.85),
+    rgba(153, 52, 233, 0.8)
+  );
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.75rem 0.95rem;
+  transition:
+    transform 160ms ease,
+    box-shadow 220ms ease;
+  box-shadow: 0 0 0 rgba(188, 53, 255, 0);
+}
+
+.cyber-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(188, 53, 255, 0.45);
+}
+
+.cyber-button:focus-visible,
+.cyber-input:focus-visible,
+.cyber-subtle-button:focus-visible {
+  outline: 2px solid rgba(43, 231, 245, 0.85);
+  outline-offset: 2px;
+}
+
+.cyber-input {
+  width: 100%;
+  border: 1px solid rgba(248, 244, 255, 0.18);
+  border-radius: 0.75rem;
+  background: rgba(8, 5, 15, 0.75);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 0.95rem;
+}
+
+.cyber-input::placeholder {
+  color: rgba(248, 244, 255, 0.36);
+}
+
+.cyber-subtle-button {
+  border: 1px solid rgba(248, 244, 255, 0.24);
+  border-radius: 0.6rem;
+  background: rgba(248, 244, 255, 0.03);
+  color: rgba(248, 244, 255, 0.9);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.6rem;
+  transition:
+    border-color 170ms ease,
+    background-color 170ms ease;
+}
+
+.cyber-subtle-button:hover {
+  border-color: rgba(43, 231, 245, 0.65);
+  background: rgba(43, 231, 245, 0.08);
+}
